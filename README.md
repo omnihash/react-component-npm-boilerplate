@@ -88,7 +88,7 @@ To publish the package to npm:
 
 4. Publish the package:
    ```bash
-   npm publish
+   npm publish --access public
    ```
 
 5. Verify the package is published by searching for it on [npm](https://www.npmjs.com/).
