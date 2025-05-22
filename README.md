@@ -2,6 +2,36 @@
 
 This project serves as a boilerplate for creating reusable React component libraries and deploying them to npm. It includes an example `AnimatedGradientButton` component featuring customizable sizes, variants, and a gradient animation effect.
 
+## Prerequisites
+
+Before setting up the project, ensure you have the following installed:
+
+1. **Node Version Manager (NVM):**
+   Install NVM to manage Node.js versions:
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+   ```
+   After installation, restart your terminal and verify:
+   ```bash
+   nvm --version
+   ```
+
+   Use the correct Node.js version specified in the `.nvmrc` file:
+   ```bash
+   nvm install
+   nvm use
+   ```
+
+2. **Yarn:**
+   Install Yarn as the package manager:
+   ```bash
+   npm install --global yarn
+   ```
+   Verify the installation:
+   ```bash
+   yarn --version
+   ```
+
 ## Setup
 
 To set up the project locally, follow these steps:
@@ -9,20 +39,16 @@ To set up the project locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd <folder>
+   cd <local-repository-folder>
    ```
 
 2. Install dependencies:
    ```bash
-   npm install
-   # or 
    yarn install
    ```
 
 3. Start the development server:
    ```bash
-   npm start
-   # or 
    yarn start
    ```
 
@@ -32,8 +58,6 @@ To use the `AnimatedGradientButton` component in your project:
 
 1. Install the package (if published to npm):
    ```bash
-   npm install <repo-name>
-   # or 
    yarn add <repo-name>
    ```
 
