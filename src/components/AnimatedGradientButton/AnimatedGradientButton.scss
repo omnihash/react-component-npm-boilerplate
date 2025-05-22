@@ -1,0 +1,146 @@
+// AnimatedGradientButton.scss
+
+// Define keyframes for gradient animation
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Define keyframes for click animation
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.97);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Base button styles
+.animated-gradient-button {
+  position: relative;
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: sans-serif;
+  font-weight: 500;
+  text-align: center;
+  background-color: rgba(15, 15, 15, 0.95);
+  color: white;
+  
+  // Create the gradient border with pseudo-element
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ff99, #ff9900);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: gradientAnimation 3s ease infinite;
+  }
+  
+  // Inner button area
+  .button-content {
+    position: relative;
+    display: block;
+    z-index: 1;
+  }
+  
+  // Size variations
+  &.small {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    
+    &::before {
+      border-radius: 8px;
+    }
+  }
+  
+  &.medium {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    
+    &::before {
+      border-radius: 10px;
+    }
+  }
+  
+  &.large {
+    padding: 16px 32px;
+    font-size: 18px;
+    border-radius: 10px;
+    
+    &::before {
+      border-radius: 12px;
+    }
+  }
+  
+  // Variant styles
+  &.primary::before {
+    background: linear-gradient(45deg, #ff00cc, #3333ff, #00ff99, #ff9900);
+    background-size: 400% 400%;
+  }
+  
+  &.secondary::before {
+    background: linear-gradient(45deg, #4776E6, #8E54E9, #4776E6);
+    background-size: 400% 400%;
+  }
+  
+  &.danger::before {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b, #ff416c);
+    background-size: 400% 400%;
+  }
+  
+  &.success::before {
+    background: linear-gradient(45deg, #11998e, #38ef7d, #11998e);
+    background-size: 400% 400%;
+  }
+  
+  // Click animation
+  &.clicked {
+    animation: pulse 0.4s forwards;
+  }
+  
+  // Disabled state
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    
+    &::before {
+      opacity: 0.4;
+    }
+  }
+  
+  // Hover effect
+  &:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    
+    &::before {
+      animation: gradientAnimation 1.5s ease infinite;
+    }
+  }
+  
+  // Active state
+  &:not(:disabled):active {
+    transform: translateY(1px);
+  }
+}
