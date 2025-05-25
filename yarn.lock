@@ -1234,6 +1234,11 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
+"@omnihash/rollup-plugin-remove-files@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@omnihash/rollup-plugin-remove-files/-/rollup-plugin-remove-files-1.0.0.tgz#2d67461dc0214609a5317738a3ffa24986d3fe2f"
+  integrity sha512-jJ+Nqm4P3C+v52V+zrTmoqKSa5plEzmyjRJ35VwaRiMLyiKMQdDfJzQMthoIuRbiYKyCOyBM0OtjFwoNNdmC+w==
+
 "@parcel/watcher-android-arm64@2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.5.1.tgz#507f836d7e2042f798c7d07ad19c3546f9848ac1"
